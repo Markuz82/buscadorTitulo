@@ -1,14 +1,11 @@
 import pymysql
 
-conexion = pymysql.connect('localhost','root','123456', 'libreriaToni')
+conexion = pymysql.connect('localhost','root','dandy83', 'libreriaToni')
 cursor = conexion.cursor()
 
 #SQL
 
-
-def resultado(titulo):
-    #resultados van a cursor
-    cursor.execute('''
+cursor.execute('''
     SELECT b.title,b.price,a.name 
     FROM books as b 
     JOIN authors as a 
@@ -17,10 +14,11 @@ def resultado(titulo):
     ;
     '''.format(titulo))
     #ejecutado ok
-    conexion.commit()
+conexion.commit()
     #La variable resultado tiene solo los valores a printar
-    resultado = cursor.fetchall()
-    return  resultado
+datos = cursor.fetchall()
+
+conexion.close()
 
     # for linea in resultado:
     #     titulo = linea[0]
