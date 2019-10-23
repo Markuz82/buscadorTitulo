@@ -1,0 +1,17 @@
+<!--Extends trae el formato de layout y sustituye los blocks de esta pagina
+en el formato de la página-->
+{% extends 'layout.html' %}
+
+{% block main %}
+<!--formulario de la ruta '/'-->
+<form action="/" method="post">
+    <input type="text" name="titulo" id="titiuloLibro_id" required>
+    <!--value es el valor que quieres enviar. name fabrica y envia la variable operador que-->
+    <!--es la que se carga el valor de value operador=value-->
+    <button type="submit">Consultar</button>
+</form>
+ {{ titulo[0] }}
+ {{ titulo[1] }}
+ {{ titulo[2] }}
+
+ {% endblock %}

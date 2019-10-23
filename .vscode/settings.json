@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "sqltools.connections": [
+        {
+            "database": "libreriaToni",
+            "dialect": "MySQL",
+            "name": "libreriaToniBD",
+            "password": "123456",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}
