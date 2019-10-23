@@ -16,14 +16,10 @@ def inicio():
     #si tu recibes (método POST) haz. (método POST lo convierte todo en string OJO)
     if request.method == 'POST':
         libro = request.form['libro']
+        consulta = conexion_MYSQL(libro)
+        print(consulta)
 
-        for titulo, precio, autor in datos:
-            if titulo.lower() == libro.lower():
-                return render_template('index.html', titulo=titulo, precio=precio, autor=autor)
-
-    return render_template('index.html')
-    #renderizado el index. Carga la ruta en el servidor. Si se cumple el if este return no se ejecuta
-    #Los returns estén donde estén acaban la función
+    return render_template('index.html', )
 
 #arrancamos el servidor
 if __name__ == "__main__":
